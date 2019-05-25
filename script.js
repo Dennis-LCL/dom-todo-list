@@ -52,7 +52,7 @@ addTodoInputField.addEventListener("keypress", event => {
   if (event.key === "Enter") {
     let htmlContent = addTodoInputField.value + removeTodoButton;
     AddTodoItem(htmlContent);
-    addTodoInputField.value = inputPrompt;
+    addTodoInputField.value = "";
   }
 });
 
