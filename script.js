@@ -12,9 +12,10 @@ const removeTodoButton = '<button class="remove" type="button">Remove</button>';
  ************************************/
 for (let i = 0; i < tasks.length; i++) {
   let htmlContent = tasks[i] + removeTodoButton;
+  console.log(htmlContent);
   AddTodoItem(htmlContent);
-  addTodoInputField.value = inputPrompt;
 }
+addTodoInputField.value = inputPrompt;
 
 /*************************************
  TODO ITEM FUNCTIONALITIES
@@ -39,19 +40,15 @@ todoList.addEventListener("click", function(event) {
  6. User can also use the "Add To Do" button to add todo item to todo list.
  ************************************/
 
-addTodoInputField.addEventListener("focus", function(event) {
-  if (event.target.value === inputPrompt) {
-    event.target.value = "";
-  }
+addTodoInputField.addEventListener("focus", event => {
+  if (event.target.value === inputPrompt) event.target.value = "";
 });
 
-addTodoInputField.addEventListener("blur", function(event) {
-  if (event.target.value === "") {
-    event.target.value = inputPrompt;
-  }
+addTodoInputField.addEventListener("blur", event => {
+  if (event.target.value === "") event.target.value = inputPrompt;
 });
 
-addTodoInputField.addEventListener("keypress", function(event) {
+addTodoInputField.addEventListener("keypress", event => {
   if (event.key === "Enter") {
     let htmlContent = addTodoInputField.value + removeTodoButton;
     AddTodoItem(htmlContent);
@@ -60,7 +57,7 @@ addTodoInputField.addEventListener("keypress", function(event) {
 });
 
 // Insert a new to do item in todo list by clicking "Add Todo" button.
-addTodoButton.addEventListener("click", function() {
+addTodoButton.addEventListener("click", () => {
   let htmlContent = addTodoInputField.value + removeTodoButton;
   AddTodoItem(htmlContent);
   addTodoInputField.value = inputPrompt;
@@ -68,9 +65,9 @@ addTodoButton.addEventListener("click", function() {
 
 // Function for adding new todo item to todo list.
 function AddTodoItem(htmlContent) {
-  // if (addTodoInputField.value && addTodoInputField.value !== inputPrompt) {
-  let todoItem = document.createElement("li");
-  todoItem.innerHTML = htmlContent;
-  todoList.appendChild(todoItem);
-  // }
+  if (addTodoInputField.value && addTodoInputField.value !== inputPrompt) {
+    let todoItem = document.createElement("li");
+    todoItem.innerHTML = htmlContent;
+    todoList.appendChild(todoItem);
+  }
 }
