@@ -1,13 +1,35 @@
 body {
-  border: 1px dotted tomato;
+  border: 1px solid gray;
   box-sizing: border-box;
   border-width: 0 1px;
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 2rem;
   margin: 0 auto;
   max-width: 700px;
   min-height: 100vh;
-  padding: 4rem;
+  padding: 2rem;
+}
+
+input {
+  /* background-color: lightgray; */
+  border: 1px solid lightgray;
+  color: black;
+  padding: 10px 10px;
+  text-align: left;
+  font-size: 2rem;
+  margin: auto;
+}
+
+button {
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  margin: auto;
 }
 
 ul {
@@ -15,14 +37,31 @@ ul {
 }
 
 ul li {
-  padding: 1rem 0;
+  border: 1px solid lightyellow;
+  background-color: lightyellow;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 1rem 0rem;
+  padding: 1rem 1rem;
   list-style-type: none;
 }
 
-.done {
-  text-decoration: line-through;
+ul button {
+  background-color: lightgray;
+  border: none;
+  border-radius: 2px;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  float: right;
 }
 
-ul button {
-  margin-left: 3em;
+.done {
+  border: 1px solid lightseagreen;
+  background-color: lightseagreen;
+  text-decoration: line-through;
 }
