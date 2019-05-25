@@ -22,3 +22,7 @@ ul li {
 .done {
   text-decoration: line-through;
 }
+
+ul button {
+  margin-left: 3em;
+}
