@@ -5,8 +5,10 @@ let todoItem;
 
 // List out each to do items in teh tasks array.
 for (let i = 0; i < tasks.length; i++) {
+  let htmlContent =
+    tasks[i] + "    " + '<button class="remove" type="button">Remove</button>';
   todoItem = document.createElement("li");
-  todoItem.innerHTML = tasks[i];
+  todoItem.innerHTML = htmlContent;
   console.log(todoItem.innerHTML);
   todoList.appendChild(todoItem);
 }
@@ -33,8 +35,13 @@ addTodoInputField.addEventListener("keypress", function(event) {
 
 // Function for adding new todo item to todo list.
 function AddTodoItem() {
+  let htmlContent =
+    document.querySelector("input").value +
+    "    " +
+    '<button class="remove" type="button">Remove</button>';
   todoItem = document.createElement("li");
-  todoItem.innerHTML = document.querySelector("input").value;
+  // todoItem.innerHTML = document.querySelector("input").value;
+  todoItem.innerHTML = htmlContent;
   todoList.appendChild(todoItem);
   return console.log(todoItem.innerHTML);
 }
